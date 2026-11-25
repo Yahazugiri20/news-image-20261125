@@ -377,7 +377,7 @@ def build():
     text(px, 24, ty - 16, "UTC", ACCENT, 2)
 
     colx = 80
-    rowh = 22
+    rowh = 20
     y = ty
     for i, (t, reg, label, sc, sure) in enumerate(STORIES):
         c = REGIONS[reg]
@@ -392,6 +392,15 @@ def build():
         # how-sure label
         text(px, 950, y + 2, sure.upper(), GREEN if sure == "high" else ACCENT, 1)
         y += rowh
+
+    # bottom line band
+    fill(px, 0, 930, W, 990, PANEL)
+    fill(px, 0, 930, W, 933, ACCENT)
+    text(px, 24, 940, "THE DAY IN ONE LINE", ACCENT, 1)
+    text(px, 24, 956, "TARIFFS, WARS AND A TURKEY PARDON:", INK, 1)
+    text(px, 24, 970, "TRUMP RESETS TRADE, HOUTHIS HIT SAUDI OIL,", MUTED, 1)
+    text(px, 700, 956, "33 STORIES", DIM, 1)
+    text(px, 700, 970, "6 REGIONS", DIM, 1)
 
     # footer
     fill(px, 0, 990, W, H, PANEL)
